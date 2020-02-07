@@ -1,6 +1,7 @@
 {
+    "id": "faq",
     "name": "FAQ",
-    "description": "FAQ plugin for Azuriom",
+    "description": "A FAQ plugin to make a FAQ to answer the most frequently asked questions.",
     "version": "0.1.0",
     "url": "https://azuriom.com",
     "authors": [
@@ -10,5 +11,5 @@
         "\\Azuriom\\Plugin\\FAQ\\Providers\\FAQServiceProvider",
         "\\Azuriom\\Plugin\\FAQ\\Providers\\RouteServiceProvider"
     ],
-	"apiId": 4
+    "apiId": 4
 }
