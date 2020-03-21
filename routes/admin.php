@@ -14,5 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('questions/update-position', 'QuestionController@updateOrder')->name('questions.update-order');
-Route::resource('questions', 'QuestionController')->except('show');
+Route::middleware('can:faq.admin')->group(function () {
+    Route::post('questions/update-position', 'QuestionController@updateOrder')->name('questions.update-order');
+    Route::resource('questions', 'QuestionController')->except('show');
+});

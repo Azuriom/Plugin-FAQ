@@ -16,4 +16,6 @@ return [
             'order-updated' => '\'ordre des questions a été mis à jour.',
         ],
     ],
+
+    'permission' => 'Voir et gérer la FAQ',
 ];

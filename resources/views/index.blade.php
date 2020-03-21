@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'FAQ')
+@section('title', trans('faq::messages.title'))
 
 @section('content')
     <div class="container content">

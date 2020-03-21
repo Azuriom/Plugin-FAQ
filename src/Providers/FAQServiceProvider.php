@@ -3,6 +3,7 @@
 namespace Azuriom\Plugin\FAQ\Providers;
 
 use Azuriom\Extensions\Plugin\BasePluginServiceProvider;
+use Azuriom\Models\Permission;
 
 class FAQServiceProvider extends BasePluginServiceProvider
 {
@@ -42,7 +43,9 @@ class FAQServiceProvider extends BasePluginServiceProvider
 
         $this->registerAdminNavigation();
 
-        //
+        Permission::registerPermissions([
+            'faq.admin' => 'faq::admin.permission',
+        ]);
     }
 
     /**
@@ -68,6 +71,7 @@ class FAQServiceProvider extends BasePluginServiceProvider
             'faq' => [
                 'name' => 'faq::admin.title',
                 'icon' => 'fas fa-question-circle',
+                'permission' => 'faq.admin',
                 'route' => 'faq.admin.questions.index',
             ],
         ];

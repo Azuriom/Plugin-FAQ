@@ -96,6 +96,7 @@ class QuestionController extends Controller
      *
      * @param  \Azuriom\Plugin\FAQ\Models\Question  $question
      * @return \Illuminate\Http\Response
+     *
      * @throws \Exception
      */
     public function destroy(Question $question)
