@@ -8,15 +8,6 @@ use Azuriom\Models\Permission;
 class FAQServiceProvider extends BasePluginServiceProvider
 {
     /**
-     * The policy mappings for this plugin.
-     *
-     * @var array
-     */
-    protected $policies = [
-        // User::class => UserPolicy::class,
-    ];
-
-    /**
      * Register any plugin services.
      *
      * @return void
