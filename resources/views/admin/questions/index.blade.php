@@ -23,7 +23,7 @@
             }
 
             const saveButton = document.getElementById('save');
-            const saveButtonIcon = saveButton.querySelector('.btn-animation');
+            const saveButtonIcon = saveButton.querySelector('.btn-spinner');
 
             saveButton.addEventListener('click', function () {
                 saveButton.setAttribute('disabled', '');
@@ -69,7 +69,7 @@
                                             <a href="{{ route('faq.admin.questions.edit', $question) }}" class="m-1" title="{{ trans('messages.actions.edit') }}" data-toggle="tooltip"><i class="fas fa-edit"></i></a>
                                         @endcan
                                         @can('delete', $question)
-                                            <a href="{{ route('faq.admin.questions.destroy', $question) }}" class="m-1" title="{{ trans('messages.actions.delete') }}" disabled data-toggle="tooltip" data-confirm="delete"><i class="fas fa-trash"></i></a>
+                                            <a href="{{ route('faq.admin.questions.destroy', $question) }}" class="m-1" title="{{ trans('messages.actions.delete') }}" data-toggle="tooltip" data-confirm="delete"><i class="fas fa-trash"></i></a>
                                         @endcan
                                 </span>
                                 </div>
@@ -80,7 +80,7 @@
 
                 <button type="button" class="btn btn-success" id="save">
                     <i class="fas fa-save"></i> {{ trans('messages.actions.save') }}
-                    <i class="fas fa-sync fa-spin d-none btn-animation"></i>
+                    <span class="spinner-border spinner-border-sm btn-spinner d-none" role="status"></span>
                 </button>
             @endempty
 

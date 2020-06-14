@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'nav-title' => 'FAQ',
+    'title' => 'FAQ',
 
     'questions' => [
         'title' => 'Questions',

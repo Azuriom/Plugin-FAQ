@@ -21,6 +21,14 @@ class QuestionController extends Controller
         return view('faq::admin.questions.index', ['questions' => $questions]);
     }
 
+    /**
+     * Update the resources order in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     *
+     * @throws \Illuminate\Validation\ValidationException
+     */
     public function updateOrder(Request $request)
     {
         $this->validate($request, [
@@ -36,7 +44,6 @@ class QuestionController extends Controller
         }
 
         return response()->json([
-            'status' => 'success',
             'message' => trans('faq::admin.questions.status.order-updated'),
         ]);
     }
