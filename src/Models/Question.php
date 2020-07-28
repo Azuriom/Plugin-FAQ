@@ -2,6 +2,7 @@
 
 namespace Azuriom\Plugin\FAQ\Models;
 
+use Azuriom\Models\Traits\HasMarkdown;
 use Azuriom\Models\Traits\HasTablePrefix;
 use Illuminate\Database\Eloquent\Model;
 
@@ -16,6 +17,7 @@ use Illuminate\Database\Eloquent\Model;
 class Question extends Model
 {
     use HasTablePrefix;
+    use HasMarkdown;
 
     /**
      * The table prefix associated with the model.
@@ -32,4 +34,9 @@ class Question extends Model
     protected $fillable = [
         'name', 'answer', 'position',
     ];
+
+    public function parseAnswer()
+    {
+        return $this->parseMarkdown('answer');
+    }
 }

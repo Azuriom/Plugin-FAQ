@@ -22,7 +22,7 @@
 
                         <div id="collapse{{ $question->id }}" class="collapse" aria-labelledby="heading{{ $question->id }}" data-parent="#faq">
                             <div class="card-body">
-                                {{ $question->answer }}
+                                {{ $question->parseAnswer() }}
                             </div>
                         </div>
                     </div>
