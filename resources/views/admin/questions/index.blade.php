@@ -30,7 +30,7 @@
                 saveButtonIcon.classList.remove('d-none');
 
                 axios.post('{{ route('faq.admin.questions.update-order') }}', {
-                    'questions': serialize(sortable.el).reverse()
+                    'questions': serialize(sortable.el),
                 }).then(function (json) {
                     createAlert('success', json.data.message, true);
                 }).catch(function (error) {
