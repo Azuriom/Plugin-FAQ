@@ -6,6 +6,7 @@ use Azuriom\Http\Controllers\Controller;
 use Azuriom\Plugin\FAQ\Models\Question;
 use Azuriom\Plugin\FAQ\Requests\QuestionRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 
 class QuestionController extends Controller
 {
@@ -66,7 +67,12 @@ class QuestionController extends Controller
      */
     public function store(QuestionRequest $request)
     {
-        Question::create($request->validated());
+        $data = $request->validated();
+        $question = new Question(Arr::except($data, 'translations'));
+
+        set_spatie_translations($question, $data['translations']);
+
+        $question->save();
 
         return redirect()->route('faq.admin.questions.index')
             ->with('success', trans('faq::admin.questions.status.created'));
@@ -92,7 +98,10 @@ class QuestionController extends Controller
      */
     public function update(QuestionRequest $request, Question $question)
     {
-        $question->update($request->validated());
+        $data = $request->validated();
+        set_spatie_translations($question, $data['translations']);
+
+        $question->update(Arr::except($data, 'translations'));
 
         return redirect()->route('faq.admin.questions.index')
             ->with('success', trans('faq::admin.questions.status.updated'));
