@@ -3,9 +3,9 @@
 namespace Azuriom\Plugin\FAQ\Models;
 
 use Azuriom\Models\Traits\HasMarkdown;
-use Illuminate\Database\Eloquent\Model;
 use Azuriom\Models\Traits\HasTablePrefix;
 use Azuriom\Models\Traits\HasTranslations;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property int $id

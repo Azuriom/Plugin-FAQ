@@ -1,11 +1,10 @@
 <?php
 
-use Azuriom\Models\Page;
-use Azuriom\Models\Post;
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
+use Azuriom\Plugin\FAQ\Models\Question;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 class SwitchToSpatieTranslationsFaq extends Migration
 {
@@ -24,7 +23,7 @@ class SwitchToSpatieTranslationsFaq extends Migration
 
         $rawModels = DB::table('faq_questions')->get();
         foreach ($rawModels as $key => $question) {
-            $question = Post::find($question->id);
+            $question = Question::find($question->id);
             $question
                 ->setTranslation('name', $locale, $rawModels[$key]->name)
                 ->setTranslation('answer', $locale, $rawModels[$key]->answer)
