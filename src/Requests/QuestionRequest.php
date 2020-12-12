@@ -14,8 +14,9 @@ class QuestionRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required', 'string', 'max:100'],
-            'answer' => ['required', 'string'],
+            'translations.*.name' => ['required', 'string', 'max:100'],
+            'translations.*.answer' => ['required', 'string'],
+            'translations.*.locale' => ['required', 'string'],
         ];
     }
 }

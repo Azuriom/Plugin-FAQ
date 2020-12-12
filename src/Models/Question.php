@@ -3,8 +3,9 @@
 namespace Azuriom\Plugin\FAQ\Models;
 
 use Azuriom\Models\Traits\HasMarkdown;
-use Azuriom\Models\Traits\HasTablePrefix;
 use Illuminate\Database\Eloquent\Model;
+use Azuriom\Models\Traits\HasTablePrefix;
+use Azuriom\Models\Traits\HasTranslations;
 
 /**
  * @property int $id
@@ -18,6 +19,7 @@ class Question extends Model
 {
     use HasTablePrefix;
     use HasMarkdown;
+    use HasTranslations;
 
     /**
      * The table prefix associated with the model.
@@ -33,6 +35,15 @@ class Question extends Model
      */
     protected $fillable = [
         'name', 'answer', 'position',
+    ];
+
+    /**
+     * The attributes that are translatable.
+     *
+     * @var array
+     */
+    public $translatable = [
+        'name', 'answer',
     ];
 
     public function parseAnswer()
