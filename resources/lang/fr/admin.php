@@ -17,5 +17,5 @@ return [
         ],
     ],
 
-    'permission' => 'Voir et gérer la FAQ',
+    'permission' => 'Gérer la FAQ',
 ];

@@ -6,7 +6,7 @@
     <div class="container content">
         <h1>{{ trans('faq::messages.title') }}</h1>
 
-        @empty($questions)
+        @if($questions->isEmpty())
             <div class="alert alert-info" role="alert">
                 {{ trans('faq::messages.empty') }}
             </div>
@@ -28,6 +28,6 @@
                     </div>
                 @endforeach
             </div>
-        @endempty
+        @endif
     </div>
 @endsection
