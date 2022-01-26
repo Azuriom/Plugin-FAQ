@@ -2,9 +2,10 @@
 
 namespace Azuriom\Plugin\FAQ\Models;
 
-use Azuriom\Models\Traits\HasMarkdown;
+use Azuriom\Models\Traits\Attachable;
 use Azuriom\Models\Traits\HasTablePrefix;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\HtmlString;
 
 /**
  * @property int $id
@@ -16,8 +17,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Question extends Model
 {
+    use Attachable;
     use HasTablePrefix;
-    use HasMarkdown;
 
     /**
      * The table prefix associated with the model.
@@ -35,8 +36,18 @@ class Question extends Model
         'name', 'answer', 'position',
     ];
 
+    public function getAttachmentsKey()
+    {
+        return 'answer';
+    }
+
+    public function getAttachmentsPath()
+    {
+        return 'faq/questions/attachments';
+    }
+
     public function parseAnswer()
     {
-        return $this->parseMarkdown('answer');
+        return new HtmlString($this->answer);
     }
 }

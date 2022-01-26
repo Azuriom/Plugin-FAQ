@@ -6,6 +6,9 @@
     <div class="card shadow mb-4">
         <div class="card-body">
             <form action="{{ route('faq.admin.questions.store') }}" method="POST">
+                <input type="hidden" name="pending_id" value="{{ $pendingId }}">
+
+                @include('admin.elements.editor', ['imagesUploadUrl' => route('faq.admin.questions.attachments.pending', $pendingId)])
 
                 @include('faq::admin.questions._form')
 

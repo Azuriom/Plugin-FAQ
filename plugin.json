@@ -1,9 +1,9 @@
 {
     "id": "faq",
     "name": "FAQ",
-    "description": "A FAQ plugin to make a FAQ to answer the most frequently asked questions.",
-    "version": "0.1.4",
-    "url": "https://azuriom.com/market/resources/4",
+    "description": "A FAQ plugin to answer the most frequently asked questions.",
+    "version": "0.1.5",
+    "url": "https://market.azuriom.com/resources/4",
     "authors": [
         "Azuriom"
     ],

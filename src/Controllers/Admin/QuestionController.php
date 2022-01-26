@@ -6,6 +6,7 @@ use Azuriom\Http\Controllers\Controller;
 use Azuriom\Plugin\FAQ\Models\Question;
 use Azuriom\Plugin\FAQ\Requests\QuestionRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class QuestionController extends Controller
 {
@@ -55,7 +56,9 @@ class QuestionController extends Controller
      */
     public function create()
     {
-        return view('faq::admin.questions.create');
+        return view('faq::admin.questions.create', [
+            'pendingId' => old('pending_id', Str::uuid()),
+        ]);
     }
 
     /**
@@ -66,7 +69,9 @@ class QuestionController extends Controller
      */
     public function store(QuestionRequest $request)
     {
-        Question::create($request->validated());
+        $question = Question::create($request->validated());
+
+        $question->persistPendingAttachments($request->input('pending_id'));
 
         return redirect()->route('faq.admin.questions.index')
             ->with('success', trans('faq::admin.questions.status.created'));

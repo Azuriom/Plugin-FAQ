@@ -8,6 +8,8 @@
             <form action="{{ route('faq.admin.questions.update', $question) }}" method="POST">
                 @method('PUT')
 
+                @include('admin.elements.editor', ['imagesUploadUrl' => route('faq.admin.questions.attachments.store', $question)])
+
                 @include('faq::admin.questions._form')
 
                 <button type="submit" class="btn btn-primary">

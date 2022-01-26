@@ -4,6 +4,8 @@ namespace Azuriom\Plugin\FAQ\Providers;
 
 use Azuriom\Extensions\Plugin\BasePluginServiceProvider;
 use Azuriom\Models\Permission;
+use Azuriom\Plugin\FAQ\Models\Question;
+use Illuminate\Database\Eloquent\Relations\Relation;
 
 class FAQServiceProvider extends BasePluginServiceProvider
 {
@@ -37,6 +39,8 @@ class FAQServiceProvider extends BasePluginServiceProvider
         Permission::registerPermissions([
             'faq.admin' => 'faq::admin.permission',
         ]);
+
+        Relation::morphMap(['faq.questions' => Question::class]);
     }
 
     /**
