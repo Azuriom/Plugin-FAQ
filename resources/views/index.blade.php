@@ -15,12 +15,12 @@
                 @foreach($questions as $question)
                     <div class="card" id="{{ Str::slug($question->name) }}">
                         <div class="card-header px-3 py-4" id="question-{{ $question->id }}">
-                            <a class="collapsed" data-toggle="collapse" href="#answer-{{ $question->id }}" data-target="#answer-{{ $question->id }}" aria-expanded="false" aria-controls="answer-{{ $question->id }}">
+                            <a class="collapsed" data-bs-toggle="collapse" href="#answer-{{ $question->id }}" data-bs-target="#answer-{{ $question->id }}" aria-expanded="false" aria-controls="answer-{{ $question->id }}">
                                 {{ $question->name }}
                             </a>
                         </div>
 
-                        <div id="answer-{{ $question->id }}" class="collapse" aria-labelledby="question-{{ $question->id }}" data-parent="#faq">
+                        <div id="answer-{{ $question->id }}" class="collapse" aria-labelledby="question-{{ $question->id }}" data-bs-parent="#faq">
                             <div class="card-body user-html-content">
                                 {!! $question->answer !!}
                             </div>

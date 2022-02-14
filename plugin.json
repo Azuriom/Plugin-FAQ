@@ -2,7 +2,7 @@
     "id": "faq",
     "name": "FAQ",
     "description": "A FAQ plugin to answer the most frequently asked questions.",
-    "version": "0.1.5",
+    "version": "1.0.0",
     "url": "https://market.azuriom.com/resources/4",
     "authors": [
         "Azuriom"

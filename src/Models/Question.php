@@ -5,7 +5,6 @@ namespace Azuriom\Plugin\FAQ\Models;
 use Azuriom\Models\Traits\Attachable;
 use Azuriom\Models\Traits\HasTablePrefix;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\HtmlString;
 
 /**
  * @property int $id
@@ -44,10 +43,5 @@ class Question extends Model
     public function getAttachmentsPath()
     {
         return 'faq/questions/attachments';
-    }
-
-    public function parseAnswer()
-    {
-        return new HtmlString($this->answer);
     }
 }

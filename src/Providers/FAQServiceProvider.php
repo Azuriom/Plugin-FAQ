@@ -51,7 +51,7 @@ class FAQServiceProvider extends BasePluginServiceProvider
     protected function routeDescriptions()
     {
         return [
-            'faq.index' => 'faq::messages.title',
+            'faq.index' => trans('faq::messages.title'),
         ];
     }
 
@@ -64,7 +64,7 @@ class FAQServiceProvider extends BasePluginServiceProvider
     {
         return [
             'faq' => [
-                'name' => 'faq::admin.title',
+                'name' => trans('faq::admin.title'),
                 'icon' => 'fas fa-question-circle',
                 'permission' => 'faq.admin',
                 'route' => 'faq.admin.questions.index',

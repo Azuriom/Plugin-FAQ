@@ -1,6 +1,6 @@
 @extends('admin.layouts.admin')
 
-@section('title', trans('faq::admin.questions.title-edit', ['question' => $question->id]))
+@section('title', trans('faq::admin.questions.edit', ['question' => $question->id]))
 
 @section('content')
     <div class="card shadow mb-4">

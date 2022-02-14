@@ -44,8 +44,7 @@
 
             @empty($questions)
                 <div class="alert alert-info" role="alert">
-                    <i class="fas fa-info-circle"></i>
-                    {{ trans('faq::messages.empty') }}
+                    <i class="fas fa-info-circle"></i> {{ trans('faq::messages.empty') }}
                 </div>
             @else
                 <ol class="list-unstyled sortable mb-3" id="questions">
@@ -55,8 +54,7 @@
                                 <div class="card-body d-flex justify-content-between">
                                     <span>
                                         <i class="fas fa-arrows-alt sortable-handle"></i>
-                                        <span>{{ $question->name }}
-                                        </span>
+                                        <span>{{ $question->name }}</span>
                                     </span>
                                     <span>
                                         <a href="{{ route('faq.admin.questions.edit', $question) }}" class="m-1" title="{{ trans('messages.actions.edit') }}" data-toggle="tooltip"><i class="fas fa-edit"></i></a>

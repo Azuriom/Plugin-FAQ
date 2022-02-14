@@ -45,7 +45,7 @@ class QuestionController extends Controller
         }
 
         return response()->json([
-            'message' => trans('faq::admin.questions.status.order-updated'),
+            'message' => trans('faq::admin.questions.updated'),
         ]);
     }
 
@@ -74,7 +74,7 @@ class QuestionController extends Controller
         $question->persistPendingAttachments($request->input('pending_id'));
 
         return redirect()->route('faq.admin.questions.index')
-            ->with('success', trans('faq::admin.questions.status.created'));
+            ->with('success', trans('messages.status.success'));
     }
 
     /**
@@ -100,7 +100,7 @@ class QuestionController extends Controller
         $question->update($request->validated());
 
         return redirect()->route('faq.admin.questions.index')
-            ->with('success', trans('faq::admin.questions.status.updated'));
+            ->with('success', trans('messages.status.success'));
     }
 
     /**
@@ -116,6 +116,6 @@ class QuestionController extends Controller
         $question->delete();
 
         return redirect()->route('faq.admin.questions.index')
-            ->with('success', trans('faq::admin.questions.status.deleted'));
+            ->with('success', trans('messages.status.success'));
     }
 }
