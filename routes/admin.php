@@ -1,5 +1,7 @@
 <?php
 
+use Azuriom\Plugin\FAQ\Controllers\Admin\QuestionAttachmentController;
+use Azuriom\Plugin\FAQ\Controllers\Admin\QuestionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,11 +17,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('can:faq.admin')->group(function () {
-    Route::post('questions/update-position', 'QuestionController@updateOrder')->name('questions.update-order');
-    Route::resource('questions', 'QuestionController')->except('show');
-    Route::resource('questions.attachments', 'QuestionAttachmentController')->only('store');
+    Route::post('questions/update-position', [QuestionController::class, 'updateOrder'])->name('questions.update-order');
+    Route::resource('questions', QuestionController::class)->except('show');
+    Route::resource('questions.attachments', QuestionAttachmentController::class)->only('store');
 
     Route::prefix('questions/attachments')->name('questions.attachments.')->group(function () {
-        Route::post('/{pendingId}', 'QuestionAttachmentController@pending')->name('pending');
+        Route::post('/{pendingId}', [QuestionAttachmentController::class, 'pending'])->name('pending');
     });
 });

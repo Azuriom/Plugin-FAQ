@@ -1,6 +1,6 @@
 @extends('admin.layouts.admin')
 
-@section('title', trans('faq::admin.questions.title-create'))
+@section('title', trans('faq::admin.questions.create'))
 
 @section('content')
     <div class="card shadow mb-4">
@@ -13,7 +13,7 @@
                 @include('faq::admin.questions._form')
 
                 <button type="submit" class="btn btn-primary">
-                    <i class="fas fa-save"></i> {{ trans('messages.actions.save') }}
+                    <i class="bi bi-save"></i> {{ trans('messages.actions.save') }}
                 </button>
             </form>
         </div>

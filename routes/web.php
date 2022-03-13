@@ -1,5 +1,6 @@
 <?php
 
+use Azuriom\Plugin\FAQ\Controllers\QuestionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,4 +15,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'QuestionController@index')->name('index');
+Route::get('/', [QuestionController::class, 'index'])->name('index');
