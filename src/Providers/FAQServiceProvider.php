@@ -65,7 +65,7 @@ class FAQServiceProvider extends BasePluginServiceProvider
         return [
             'faq' => [
                 'name' => trans('faq::admin.title'),
-                'icon' => 'fas fa-question-circle',
+                'icon' => 'bi bi-question-circle',
                 'permission' => 'faq.admin',
                 'route' => 'faq.admin.questions.index',
             ],

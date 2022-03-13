@@ -44,7 +44,7 @@
 
             @empty($questions)
                 <div class="alert alert-info" role="alert">
-                    <i class="fas fa-info-circle"></i> {{ trans('faq::messages.empty') }}
+                    <i class="bi bi-info-circle"></i> {{ trans('faq::messages.empty') }}
                 </div>
             @else
                 <ol class="list-unstyled sortable mb-3" id="questions">
@@ -53,12 +53,12 @@
                             <div class="card">
                                 <div class="card-body d-flex justify-content-between">
                                     <span>
-                                        <i class="fas fa-arrows-alt sortable-handle"></i>
+                                        <i class="bi bi-arrows-move sortable-handle"></i>
                                         <span>{{ $question->name }}</span>
                                     </span>
                                     <span>
-                                        <a href="{{ route('faq.admin.questions.edit', $question) }}" class="m-1" title="{{ trans('messages.actions.edit') }}" data-bs-toggle="tooltip"><i class="fas fa-edit"></i></a>
-                                        <a href="{{ route('faq.admin.questions.destroy', $question) }}" class="m-1" title="{{ trans('messages.actions.delete') }}" data-bs-toggle="tooltip" data-confirm="delete"><i class="fas fa-trash"></i></a>
+                                        <a href="{{ route('faq.admin.questions.edit', $question) }}" class="m-1" title="{{ trans('messages.actions.edit') }}" data-bs-toggle="tooltip"><i class="bi bi-pencil-square"></i></a>
+                                        <a href="{{ route('faq.admin.questions.destroy', $question) }}" class="m-1" title="{{ trans('messages.actions.delete') }}" data-bs-toggle="tooltip" data-confirm="delete"><i class="bi bi-trash"></i></a>
                                     </span>
                                 </div>
                             </div>
@@ -67,13 +67,13 @@
                 </ol>
 
                 <button type="button" class="btn btn-success" id="save">
-                    <i class="fas fa-save"></i> {{ trans('messages.actions.save') }}
+                    <i class="bi bi-save"></i> {{ trans('messages.actions.save') }}
                     <span class="spinner-border spinner-border-sm btn-spinner d-none" role="status"></span>
                 </button>
             @endempty
 
             <a class="btn btn-primary" href="{{ route('faq.admin.questions.create') }}">
-                <i class="fas fa-plus"></i> {{ trans('messages.actions.add') }}
+                <i class="bi bi-plus-lg"></i> {{ trans('messages.actions.add') }}
             </a>
         </div>
     </div>
