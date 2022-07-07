@@ -8,7 +8,7 @@ return [
         'edit' => 'Modification de la question #:question',
         'create' => 'Ajout d\'une question',
 
-        'order-updated' => 'L\'ordre des questions a été mis à jour.',
+        'updated' => 'L\'ordre des questions a été mis à jour.',
     ],
 
     'permission' => 'Gérer la FAQ',

@@ -54,7 +54,9 @@
                                 <div class="card-body d-flex justify-content-between">
                                     <span>
                                         <i class="bi bi-arrows-move sortable-handle"></i>
-                                        <span>{{ $question->name }}</span>
+                                        <a href="{{ route('faq.index') }}#{{ Str::slug($question->name) }}" target="_blank">
+                                            {{ $question->name }}
+                                        </a>
                                     </span>
                                     <span>
                                         <a href="{{ route('faq.admin.questions.edit', $question) }}" class="m-1" title="{{ trans('messages.actions.edit') }}" data-bs-toggle="tooltip"><i class="bi bi-pencil-square"></i></a>

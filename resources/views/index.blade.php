@@ -2,6 +2,30 @@
 
 @section('title', trans('faq::messages.title'))
 
+@push('scripts')
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (!window.location.hash) {
+                return;
+            }
+
+            const searchElement = document.getElementById(window.location.hash.substring(1))
+            if (!searchElement) {
+                return;
+            }
+
+            const button = searchElement.querySelector('[data-bs-target]');
+            if (!button) {
+                return;
+            }
+
+            const target = document.querySelector(button.getAttribute('data-bs-target'));
+            const collapse = new bootstrap.Collapse(target, { toggle: false });
+            collapse.show();
+        })
+    </script>
+@endpush
+
 @section('content')
     <h1>{{ trans('faq::messages.title') }}</h1>
 
