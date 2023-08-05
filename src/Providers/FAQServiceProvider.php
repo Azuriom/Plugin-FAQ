@@ -11,20 +11,16 @@ class FAQServiceProvider extends BasePluginServiceProvider
 {
     /**
      * Register any plugin services.
-     *
-     * @return void
      */
-    public function register()
+    public function register(): void
     {
         //
     }
 
     /**
      * Bootstrap any plugin services.
-     *
-     * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         $this->loadViews();
 
@@ -46,9 +42,9 @@ class FAQServiceProvider extends BasePluginServiceProvider
     /**
      * Returns the routes that should be able to be added to the navbar.
      *
-     * @return array
+     * @return array<string, string>
      */
-    protected function routeDescriptions()
+    protected function routeDescriptions(): array
     {
         return [
             'faq.index' => trans('faq::messages.title'),
@@ -58,14 +54,14 @@ class FAQServiceProvider extends BasePluginServiceProvider
     /**
      * Return the admin navigations routes to register in the dashboard.
      *
-     * @return array
+     * @return array<string, array<string, string>>
      */
-    protected function adminNavigation()
+    protected function adminNavigation(): array
     {
         return [
             'faq' => [
                 'name' => trans('faq::admin.title'),
-                'icon' => 'bi bi-question-circle',
+                'icon' => 'bi bi-info-circle',
                 'permission' => 'faq.admin',
                 'route' => 'faq.admin.questions.index',
             ],

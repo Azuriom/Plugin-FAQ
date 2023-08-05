@@ -1,14 +1,11 @@
 {
     "name": "azuriom/faq",
     "type": "azuriom-plugin",
-    "description": "FAQ plugin for Azuriom",
+    "description": "A FAQ plugin to answer the most frequently asked questions.",
     "license": "MIT",
     "autoload": {
         "psr-4": {
             "Azuriom\\Plugin\\FAQ\\": "src/"
-        },
-        "files": [
-            "src/helpers.php"
-        ]
+        }
     }
 }

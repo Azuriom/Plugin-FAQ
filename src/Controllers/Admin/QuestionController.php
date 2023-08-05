@@ -12,8 +12,6 @@ class QuestionController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function index()
     {
@@ -24,9 +22,6 @@ class QuestionController extends Controller
 
     /**
      * Update the resources order in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      *
      * @throws \Illuminate\Validation\ValidationException
      */
@@ -51,8 +46,6 @@ class QuestionController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function create()
     {
@@ -63,9 +56,6 @@ class QuestionController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
-     * @param  \Azuriom\Plugin\FAQ\Requests\QuestionRequest  $request
-     * @return \Illuminate\Http\Response
      */
     public function store(QuestionRequest $request)
     {
@@ -73,15 +63,12 @@ class QuestionController extends Controller
 
         $question->persistPendingAttachments($request->input('pending_id'));
 
-        return redirect()->route('faq.admin.questions.index')
+        return to_route('faq.admin.questions.index')
             ->with('success', trans('messages.status.success'));
     }
 
     /**
      * Show the form for editing the specified resource.
-     *
-     * @param  \Azuriom\Plugin\FAQ\Models\Question  $question
-     * @return \Illuminate\Http\Response
      */
     public function edit(Question $question)
     {
@@ -90,32 +77,25 @@ class QuestionController extends Controller
 
     /**
      * Update the specified resource in storage.
-     *
-     * @param  \Azuriom\Plugin\FAQ\Requests\QuestionRequest  $request
-     * @param  \Azuriom\Plugin\FAQ\Models\Question  $question
-     * @return \Illuminate\Http\Response
      */
     public function update(QuestionRequest $request, Question $question)
     {
         $question->update($request->validated());
 
-        return redirect()->route('faq.admin.questions.index')
+        return to_route('faq.admin.questions.index')
             ->with('success', trans('messages.status.success'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \Azuriom\Plugin\FAQ\Models\Question  $question
-     * @return \Illuminate\Http\Response
-     *
-     * @throws \Exception
+     * @throws \LogicException
      */
     public function destroy(Question $question)
     {
         $question->delete();
 
-        return redirect()->route('faq.admin.questions.index')
+        return to_route('faq.admin.questions.index')
             ->with('success', trans('messages.status.success'));
     }
 }

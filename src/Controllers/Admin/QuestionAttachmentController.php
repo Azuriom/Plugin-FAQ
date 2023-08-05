@@ -10,10 +10,6 @@ class QuestionAttachmentController extends Controller
 {
     /**
      * Store a newly created resource in storage.
-     *
-     * @param  \Azuriom\Http\Requests\AttachmentRequest  $request
-     * @param  \Azuriom\Plugin\FAQ\Models\Question  $question
-     * @return \Illuminate\Http\Response
      */
     public function store(AttachmentRequest $request, Question $question)
     {
@@ -24,10 +20,6 @@ class QuestionAttachmentController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
-     * @param  \Azuriom\Http\Requests\AttachmentRequest  $request
-     * @param  string  $pendingId
-     * @return \Illuminate\Http\Response
      */
     public function pending(AttachmentRequest $request, string $pendingId)
     {

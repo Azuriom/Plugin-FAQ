@@ -9,8 +9,6 @@ class QuestionController extends Controller
 {
     /**
      * Show the home plugin page.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function index()
     {

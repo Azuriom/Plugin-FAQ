@@ -21,26 +21,24 @@ class Question extends Model
 
     /**
      * The table prefix associated with the model.
-     *
-     * @var string
      */
-    protected $prefix = 'faq_';
+    protected string $prefix = 'faq_';
 
     /**
      * The attributes that are mass assignable.
      *
-     * @var array
+     * @var array<int, string>
      */
     protected $fillable = [
         'name', 'answer', 'position',
     ];
 
-    public function getAttachmentsKey()
+    public function getAttachmentsKey(): string
     {
         return 'answer';
     }
 
-    public function getAttachmentsPath()
+    public function getAttachmentsPath(): string
     {
         return 'faq/questions/attachments';
     }
